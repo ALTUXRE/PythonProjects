@@ -1,46 +1,27 @@
-user1=input('Player1: ')
-user2=input('Player2: ')
-if user1=='Rock' and user2=='Scissors':
-    print('user1 wins')
-elif user1=='Rock' and user2=='Paper':
-    print('user2 wins')
-elif user1=='Rock' and user2=='Rock':
-    print('tie')
-if user2=='Rock' and user1=='Scissors':
-    print('user2 wins')
-elif user2=='Rock' and user1=='Paper':
-    print('user1 wins')
-elif user2=='Paper' and user1=='Paper':
-    print('tie')
-elif user1=='Scissors' and user2=='Scissors':
-    print('tie')
-#want to Play again
-count=int(input('Want to play again ? (if yes enter 1 else enter 0)'))
-if count==0:
-    print('Game Over!')
-    rate=int(input('Please rate the game out of 5 stars: '))
-    print('Thank You for playing')
-while count==1:
-    user1=input('Player1: ')
-    user2=input('Player2: ')
-    if user1=='Rock' and user2=='Scissors':
-        print('user1 wins')
-    elif user1=='Rock' and user2=='Paper':
-        print('user2 wins')
-    elif user1=='Rock' and user2=='Rock':
-        print('tie')
-    if user2=='Rock' and user1=='Scissors':
-        print('user2 wins')
-    elif user2=='Rock' and user1=='Paper':
-        print('user1 wins')
-    elif user2=='Paper' and user1=='Paper':
-        print('tie')
-    elif user1=='Scissors' and user2=='Scissors':
-        print('tie')
-    count=int(input('Want to play again ? (if yes enter 1 else enter 0)'))
-    if count==0:
-        print('Game Over!')
-        rate=int(input('Please rate the game out of 5 stars: '))
-        print('Thank You for playing')
-        break
+Choices = ("rock", "paper", "scissors")
+running = True
 
+while running:
+
+    player1=input("player1 (rock, paper, scissors): ")
+    while player1 not in Choices:
+        player1 = input("player1 (rock, paper, scissors): ")
+    player2=input("player2 (rock, paper, scissors): ")
+    while player2 not in Choices:
+        player2 = input("player2 (rock, paper, scissors): ")
+
+    if player1 == player2:
+        print("It's a tie!")
+    elif player1 == "rock" and player2 == "scissors":
+        print("player1 wins!")
+    elif player1 == "paper" and player2 == "rock":
+        print("player1 wins!")
+    elif player1 == "scissor" and player2 == "paper":
+        print("player1 wins!")
+    else:
+        print("player2 wins!")
+
+    if not input("Play again? (y/n): ").lower() == "y":
+        running = False
+
+print("Thanks for playing!")
